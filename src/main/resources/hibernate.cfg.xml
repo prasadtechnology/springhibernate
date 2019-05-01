@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" >
+
+<hibernate-configuration>
+	<session-factory>
+	
+		
+		<!-- Local DataBase  -->
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>	
+		<property name="connection.pool_size">1</property>
+		<property name="show_sql">true</property>
+		<property name="connection.autoReconnect">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+	    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+	    <property name="hibernate.current_session_context_class">thread</property> 
+
+		<!-- C3P0 setting connection.provider_class is optional. If it is not there, 
+		   Hibernate will guess the value based on property prefix c3p0 -->
+		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="c3p0.min_size">3</property>
+		<property name="c3p0.max_size">10</property>
+		<property name="c3p0.timeout">1000</property>
+		<property name="c3p0.idle_test_period">2000</property>
+		<property name="c3p0.preferredTestQuery">select 1;</property>		
+		<property name="hibernate.connection.release_mode">after_transaction</property>
+
+		 <mapping class="com.models.Car" />
+		
+		<!-- <mapping resource="UCM.hbm.xml"> -->
+	</session-factory>
+</hibernate-configuration>
