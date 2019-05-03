@@ -25,8 +25,7 @@
 		<property name="c3p0.preferredTestQuery">select 1;</property>		
 		<property name="hibernate.connection.release_mode">after_transaction</property>
 
-		 <mapping class="com.models.Car" />
+		<mapping class="com.models.Car" />
 		
-		<!-- <mapping resource="UCM.hbm.xml"> -->
 	</session-factory>
 </hibernate-configuration>

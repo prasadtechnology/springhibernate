@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
@@ -26,7 +25,7 @@ public class HibernateConfiguration
 	
 		    config = new Configuration();
 		    config.configure("hibernate.cfg.xml");
-	
+		    
 		    ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(getHibernateProperties())
 			    .build();
 		    sessionFactory = config.buildSessionFactory(serviceRegistry);

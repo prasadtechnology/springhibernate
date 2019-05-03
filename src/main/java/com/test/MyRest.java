@@ -18,12 +18,13 @@ import com.models.Car;
 import com.util.HibernateConfiguration;
 
 @RestController
+@RequestMapping("/api/v1.0.0/")
 public class MyRest {
 
 	@RequestMapping(value="/test")
 	public String getTestResult() {
 		try {
-			Car car = new Car(null,"M1","D1","G1");
+			Car car = new Car("TestLicense","M1","D1","G1");
 			Session session = HibernateConfiguration.openHibernateSession();
 			Transaction tx = session.beginTransaction();
 			session.save(car);
